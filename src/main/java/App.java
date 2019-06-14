@@ -10,6 +10,26 @@ public class App {
         return volume;
     }
 
+    static double costToShip(int volume, String speed, String giftWrap, double weight){
+        int costToShip = 0;
+        int volumeCost =(volume / 10);
+        int wrapCost = 0;
+        double weightCost = weight * .25;
+
+        if (speed == "priority") {
+            costToShip += 9;
+        } else if (speed == "ground") {
+            costToShip += 3;
+        }
+
+        if (giftWrap == "yes") {
+            costToShip +=4;
+        } else if (giftWrap =="no" ) {
+            costToShip +=0;
+        }
+        double finalCost = costToShip + volumeCost + wrapCost + weightCost;
+        return finalCost;
+    }
 
     public static void main(String[] args){
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader (System.in));
@@ -20,13 +40,17 @@ public class App {
         try {
             System.out.println("Length: ");
             int length = Integer.parseInt(bufferedReader.readLine());
+            
             System.out.println("Width: ");
             int width = Integer.parseInt(bufferedReader.readLine());
             System.out.println("Height: ");
+            
             int height = Integer.parseInt(bufferedReader.readLine());
             System.out.println("Weight (in lbs): ");
+            
             double lbs = Integer.parseInt(bufferedReader.readLine());
             int volume = calcVolume(length, width, height);
+            
             System.out.println("The volume of your package is: " + volume);
 
             System.out.println(" ");
@@ -40,10 +64,12 @@ public class App {
             String giftWrap = bufferedReader.readLine().toLowerCase();
 
             System.out.println(" ");
-            System.out.println("Your total shipping price comes to " +);
+            System.out.println("Your total shipping price comes to ");
 
 //            System.out.println(" ");
 //            System.out.println("Would you like to ship another item? ");
+            double finalCost = costToShip(volume, speed, giftWrap, lbs);
+            System.out.println(finalCost);
 
         } catch(IOException e) {
             e.printStackTrace();
