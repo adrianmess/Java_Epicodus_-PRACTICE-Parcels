@@ -29,6 +29,22 @@ public class App {
             int volume = calcVolume(length, width, height);
             System.out.println("The volume of your package is: " + volume);
 
+            System.out.println(" ");
+            System.out.println("Please type the shipping speed you want:");
+            System.out.println("'Priority' (1-3 days):");
+            System.out.println("'Ground' (3-7 days):");
+            String speed = bufferedReader.readLine().toLowerCase();
+
+            System.out.println(" ");
+            System.out.println("Would you like gift wrapping?  Yes or No?");
+            String giftWrap = bufferedReader.readLine().toLowerCase();
+
+            System.out.println(" ");
+            System.out.println("Your total shipping price comes to " +);
+
+//            System.out.println(" ");
+//            System.out.println("Would you like to ship another item? ");
+
         } catch(IOException e) {
             e.printStackTrace();
         }
