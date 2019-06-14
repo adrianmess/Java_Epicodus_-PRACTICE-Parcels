@@ -7,6 +7,7 @@ public class App {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader (System.in));
         System.out.println("Please provide dimensions of package. Length, Width, Height & Weight:");
 
+
         try {
             System.out.println("Length: ");
             int length = Integer.parseInt(bufferedReader.readLine());
@@ -16,6 +17,12 @@ public class App {
             int height = Integer.parseInt(bufferedReader.readLine());
             System.out.println("Weight (in lbs): ");
             double lbs = Integer.parseInt(bufferedReader.readLine());
+
+            int volume = length * width * height;
+            System.out.println("Package volume is " + volume);
+
+
+
 
         } catch(IOException e) {
             e.printStackTrace();
