@@ -1,0 +1,11 @@
+build/
+.gradle/
+.idea/
+gradle/
+gradlew*
+settings.gradle
+.classpath
+.project
+.settings
+.vscode
+bin/
